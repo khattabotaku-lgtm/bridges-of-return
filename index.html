@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bridges of Return</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primaryLight: '#1D4ED8',
+              accentLight: '#FBBF24',
+              bgLight: '#F3F4F6',
+              textLight: '#111827',
+              cardLight: '#FFFFFF',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+      }
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .card-hover:hover {
+        box-shadow: 0 8px 20px rgba(251, 191, 36, 0.6);
+        transform: translateY(-5px);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .btn-scale:hover {
+        transform: scale(1.05);
+        transition: transform 0.2s ease;
+      }
+      
+    </style>
+  </head>
+
+  <body class="bg-bgLight text-textLight font-sans transition-colors duration-500">
+    <!-- Navigation -->
+    <nav class="flex flex-wrap justify-between items-center p-6 bg-primaryLight text-white dark:bg-indigo-800 dark:text-white">
+      <div class="flex items-center space-x-3 fade-in">
+        <img src="logo.png" alt="Bridges of Return Logo" class="h-10 w-auto" />
+        <h1 class="text-3xl font-bold">Bridges of Return</h1>
+      </div>
+      <div class="space-x-4 fade-in text-lg">
+        <a href="#about" class="hover:text-accentLight">About Us</a>
+        <a href="#programs" class="hover:text-accentLight">Our Programs</a>
+        <a href="#projects" class="hover:text-accentLight">Projects</a>
+        <a href="#contact" class="hover:text-accentLight">Contact</a>
+        <button onclick="toggleDarkMode()" class="bg-blue text-primaryLight px-3 py-1 rounded btn-scale">🌓</button>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="relative h-[80vh] flex items-center justify-center text-center text-white">
+      <div class="absolute inset-0">
+        <img src="back.jpg" alt="Background Image" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+      </div>
+      <div class="relative z-10 px-6">
+        <h2 class="text-4xl md:text-5xl font-bold mb-4 fade-in">Together to build a new future</h2>
+        <p class="text-xl mb-6 max-w-xl mx-auto fade-in">A new hope for Syrian children and families</p>
+        <a href="#donate" class="bg-accentLight text-white font-semibold px-6 py-2 rounded hover:bg-yellow-400 btn-scale">Donate Now</a>
+      </div>
+    </header>
+
+    <!-- About -->
+    <section id="about" class="py-16 px-4 sm:px-6 bg-bgLight text-center dark:bg-gray-800 dark:text-white">
+      <h2 class="text-3xl font-bold text-primaryLight dark:text-yellow-300 mb-4 fade-in">About Us</h2>
+      <p class="max-w-2xl mx-auto text-lg leading-relaxed fade-in">
+        Bridges of Return is a non-profit humanitarian organization dedicated to restoring hope through education, relief, and empowerment for individuals inside and outside Syria.
+      </p>
+    </section>
+
+    <!-- Programs -->
+    <section id="programs" class="py-16 px-4 sm:px-6 bg-bgLight text-center dark:bg-gray-900 dark:text-white">
+      <h2 class="text-3xl font-bold text-primaryLight dark:text-yellow-300 mb-8 fade-in">Our Programs</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div class="bg-cardLight p-6 rounded-lg shadow-md dark:bg-gray-800 card-hover fade-in">
+          <h3 class="text-xl font-semibold mb-2 text-primaryLight dark:text-yellow-300">Education</h3>
+          <p>We provide educational opportunities for Syrian children and youth through schools and training courses.</p>
+        </div>
+        <div class="bg-cardLight p-6 rounded-lg shadow-md dark:bg-gray-800 card-hover fade-in">
+          <h3 class="text-xl font-semibold mb-2 text-primaryLight dark:text-yellow-300">Relief</h3>
+          <p>We support families with food baskets, medical care, and emergency assistance during crises.</p>
+        </div>
+        <div class="bg-cardLight p-6 rounded-lg shadow-md dark:bg-gray-800 card-hover fade-in">
+          <h3 class="text-xl font-semibold mb-2 text-primaryLight dark:text-yellow-300">Empowerment</h3>
+          <p>We empower women and youth through vocational training and small business initiatives.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="py-16 px-4 sm:px-6 bg-bgLight text-center dark:bg-gray-800 dark:text-white">
+      <h2 class="text-3xl font-bold text-primaryLight dark:text-yellow-300 mb-8 fade-in">Our Projects</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <!-- Project Cards -->
+        <div class="bg-cardLight p-4 rounded-lg shadow-md dark:bg-gray-700 card-hover fade-in">
+          <div class="relative">
+            <img id="project1-img" src="project1_1.jpg" class="rounded mb-4 w-full h-48 object-cover transition-all duration-500" />
+            <button onclick="prevImage('project1')" class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-60 hover:bg-opacity-90 rounded-full p-1">←</button>
+            <button onclick="nextImage('project1')" class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-60 hover:bg-opacity-90 rounded-full p-1">→</button>
+          </div>
+          <p>Rebuilding schools in northern Syria for displaced children.</p>
+        </div>
+
+        <div class="bg-cardLight p-4 rounded-lg shadow-md dark:bg-gray-700 card-hover fade-in">
+          <div class="relative">
+            <img id="project2-img" src="project2_1.jpg" class="rounded mb-4 w-full h-48 object-cover transition-all duration-500" />
+            <button onclick="prevImage('project2')" class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-60 hover:bg-opacity-90 rounded-full p-1">←</button>
+            <button onclick="nextImage('project2')" class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-60 hover:bg-opacity-90 rounded-full p-1">→</button>
+          </div>
+          <p>Launching health campaigns in refugee camps.</p>
+        </div>
+
+        <div class="bg-cardLight p-4 rounded-lg shadow-md dark:bg-gray-700 card-hover fade-in">
+          <div class="relative">
+            <img id="project3-img" src="project3_1.jpg" class="rounded mb-4 w-full h-48 object-cover transition-all duration-500" />
+            <button onclick="prevImage('project3')" class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-60 hover:bg-opacity-90 rounded-full p-1">←</button>
+            <button onclick="nextImage('project3')" class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-60 hover:bg-opacity-90 rounded-full p-1">→</button>
+          </div>
+          <p>Supporting women's entrepreneurship in Aleppo and Idlib.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Donate -->
+    <section id="donate" class="py-16 px-4 sm:px-6 bg-primaryLight text-white text-center dark:bg-indigo-900">
+      <h2 class="text-3xl font-bold mb-4 fade-in">Contribute with Us</h2>
+      <p class="text-lg mb-6 fade-in">Your donation makes a real difference in the lives of thousands of Syrians</p>
+      <a href="mailto:donate@jusoor.org" class="bg-accentLight text-primaryLight font-semibold px-6 py-2 rounded hover:bg-yellow-400 btn-scale fade-in">Donate Now</a>
+    </section>
+
+<!-- Contact -->
+<section id="contact" class="py-16 px-4 sm:px-6 bg-bgLight text-center dark:bg-gray-800 dark:text-white">
+  <h2 class="text-3xl font-bold text-primaryLight dark:text-yellow-300 mb-4 fade-in">Contact Us</h2>
+  <p class="mb-2 fade-in">📧 Syrianbridges@proton.me</p>
+  <p class="fade-in">
+    📱 <a href="https://wa.me/963968601158" style="text-decoration: none; color: black ;"  target="_blank" class="text-primaryLight hover:underline dark:text-yellow-300">+963 968 601 158 (WhatsApp)</a>
+  </p>
+
+
+    <script>
+      // Dark mode toggle
+      function toggleDarkMode() {
+        document.documentElement.classList.toggle('dark');
+      }
+
+      // Fade-in animation on scroll
+      const fadeIns = document.querySelectorAll('.fade-in');
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      });
+      fadeIns.forEach(el => observer.observe(el));
+
+      // Image slider for projects
+      const projects = {
+        project1: ['project1_1.jpg', 'project1_2.jpg', 'project1_3.jpg'],
+        project2: ['project2_1.jpg', 'project2_2.jpg', 'project2_3.jpg'],
+        project3: ['project3_1.jpg', 'project3_2.jpg', 'project3_3.jpg'],
+      };
+
+      function nextImage(project) {
+        const img = document.getElementById(`${project}-img`);
+        const arr = projects[project];
+        let currentIndex = arr.indexOf(img.src.split('/').pop());
+        currentIndex = (currentIndex + 1) % arr.length;
+        img.src = arr[currentIndex];
+      }
+
+      function prevImage(project) {
+        const img = document.getElementById(`${project}-img`);
+        const arr = projects[project];
+        let currentIndex = arr.indexOf(img.src.split('/').pop());
+        currentIndex = (currentIndex - 1 + arr.length) % arr.length;
+        img.src = arr[currentIndex];
+      }
+    </script>
+  </body>
+</html>
