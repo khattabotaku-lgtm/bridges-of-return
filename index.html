@@ -40,7 +40,6 @@
         transform: scale(1.05);
         transition: transform 0.2s ease;
       }
-      
     </style>
   </head>
 
@@ -61,9 +60,9 @@
     </nav>
 
     <!-- Hero -->
-    <header class="relative h-[80vh] flex items-center justify-center text-center text-white">
+    <header class="relative h-[70vh] md:h-[80vh] flex items-center justify-center text-center text-white">
       <div class="absolute inset-0">
-        <img src="back.jpg" alt="Background Image" class="w-full h-full object-cover" />
+        <img src="back.jpg" alt="Background Image" class="w-full h-full object-cover max-w-full" />
         <div class="absolute inset-0 bg-black opacity-50"></div>
       </div>
       <div class="relative z-10 px-6">
@@ -107,7 +106,7 @@
         <!-- Project Cards -->
         <div class="bg-cardLight p-4 rounded-lg shadow-md dark:bg-gray-700 card-hover fade-in">
           <div class="relative">
-            <img id="project1-img" src="project1_1.jpg" class="rounded mb-4 w-full h-48 object-cover transition-all duration-500" />
+            <img id="project1-img" src="project1_1.jpg" class="rounded mb-4 w-full max-w-full h-48 object-cover transition-all duration-500" />
             <button onclick="prevImage('project1')" class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-60 hover:bg-opacity-90 rounded-full p-1">←</button>
             <button onclick="nextImage('project1')" class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-60 hover:bg-opacity-90 rounded-full p-1">→</button>
           </div>
@@ -116,7 +115,7 @@
 
         <div class="bg-cardLight p-4 rounded-lg shadow-md dark:bg-gray-700 card-hover fade-in">
           <div class="relative">
-            <img id="project2-img" src="project2_1.jpg" class="rounded mb-4 w-full h-48 object-cover transition-all duration-500" />
+            <img id="project2-img" src="project2_1.jpg" class="rounded mb-4 w-full max-w-full h-48 object-cover transition-all duration-500" />
             <button onclick="prevImage('project2')" class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-60 hover:bg-opacity-90 rounded-full p-1">←</button>
             <button onclick="nextImage('project2')" class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-60 hover:bg-opacity-90 rounded-full p-1">→</button>
           </div>
@@ -125,7 +124,7 @@
 
         <div class="bg-cardLight p-4 rounded-lg shadow-md dark:bg-gray-700 card-hover fade-in">
           <div class="relative">
-            <img id="project3-img" src="project3_1.jpg" class="rounded mb-4 w-full h-48 object-cover transition-all duration-500" />
+            <img id="project3-img" src="project3_1.jpg" class="rounded mb-4 w-full max-w-full h-48 object-cover transition-all duration-500" />
             <button onclick="prevImage('project3')" class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-60 hover:bg-opacity-90 rounded-full p-1">←</button>
             <button onclick="nextImage('project3')" class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-60 hover:bg-opacity-90 rounded-full p-1">→</button>
           </div>
@@ -141,14 +140,14 @@
       <a href="mailto:donate@jusoor.org" class="bg-accentLight text-primaryLight font-semibold px-6 py-2 rounded hover:bg-yellow-400 btn-scale fade-in">Donate Now</a>
     </section>
 
-<!-- Contact -->
-<section id="contact" class="py-16 px-4 sm:px-6 bg-bgLight text-center dark:bg-gray-800 dark:text-white">
-  <h2 class="text-3xl font-bold text-primaryLight dark:text-yellow-300 mb-4 fade-in">Contact Us</h2>
-  <p class="mb-2 fade-in">📧 Syrianbridges@proton.me</p>
-  <p class="fade-in">
-    📱 <a href="https://wa.me/963968601158" style="text-decoration: none; color: black ;"  target="_blank" class="text-primaryLight hover:underline dark:text-yellow-300">+963 968 601 158 (WhatsApp)</a>
-  </p>
-
+    <!-- Contact -->
+    <section id="contact" class="py-16 px-4 sm:px-6 bg-bgLight text-center dark:bg-gray-800 dark:text-white">
+      <h2 class="text-3xl font-bold text-primaryLight dark:text-yellow-300 mb-4 fade-in">Contact Us</h2>
+      <p class="mb-2 fade-in">📧 Syrianbridges@proton.me</p>
+      <p class="fade-in">
+        📱 <a href="https://wa.me/963968601158" class="text-primaryLight hover:underline dark:text-yellow-300 break-words" target="_blank">+963 968 601 158 (WhatsApp)</a>
+      </p>
+    </section>
 
     <script>
       // Dark mode toggle
